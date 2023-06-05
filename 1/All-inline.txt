@@ -3,16 +3,16 @@ var _$ = function(){
    /* starting from this section is the data you can edit*/ 
    var editableTitle = "save 5% with code" /*coupon title*/ 
    var editableOffer = "Shop using Target's discount code and get 5% off your purchase at checkout" /*the offer*/ 
-   var editableCouponLink = "https://jasper.ai/free-trial?fpr=bonus100" /*redirect link*/ 
-   var editableLinkAppearance = "jasper.ai" /*how the link appears in the pop up*/ 
+   var editableCouponLink = "https://jasper.ai/free-trial?fpr=bonus100" /*redirect link*/
    var editableLinkName = "jasper" /*the name of the website for redirect*/ 
    var editableLogo = "https://developerflow.github.io/host/1/Jasper_Logo.jpg"   /*set the path to the image that you want to be in the box*/ 
    var editableImage = editableLogo 
    var editableCoupon = "FTAP"  /*the coupon code*/
    var editableCouponBtn = "Show coupon" /*the button that the user clicks to open the tab*/
    var editableCopyCoupon = "Copy Code" /*the button that was formally "copy code"*/
-   var editableInstruction = "Copy and paste this code at " /*the instruction at the open tab, previously "copy and paste this link at"*/
-        
+   var editableInstruction = "Copy and paste this code at " /*the instruction at the open tab, previously "copy and paste this link at"*/ 
+   var editableLinkAppearance = "jasper.ai" /*how the link appears in the pop up beside the instruction, you can just leave it blank if there is no link that the user should be able to click*/
+
     /*this is where the section ends, from this point you cannot edit the data*/ 
   
    genInter() 
@@ -76,7 +76,7 @@ var _$ = function(){
                      title.innerHTML = editableTitle 
   
                      var destination = document.createElement("div") 
-                     destination.innerHTML = "Copy and paste this code at " 
+                     destination.innerHTML = editableInstruction 
                      var link = document.createElement("a"); link.href = editableCouponLink 
                      link.innerHTML = editableLinkAppearance 
   
