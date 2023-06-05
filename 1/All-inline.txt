@@ -1,0 +1,301 @@
+<script id = "dev-flow-coupon-script">
+var _$ = function(){ 
+   /* starting from this section is the data you can edit*/ 
+   var editableTitle = "save 5% with code" /*coupon title*/ 
+   var editableOffer = "Shop using Target's discount code and get 5% off your purchase at checkout" /*the offer*/ 
+   var editableCouponLink = "https://jasper.ai/free-trial?fpr=bonus100" /*redirect link*/ 
+   var editableLinkAppearance = "jasper.ai" /*how the link appears in the pop up*/ 
+   var editableLinkName = "jasper" /*the name of the website for redirect*/ 
+   var editableLogo = "https://developerflow.github.io/host/1/Jasper_Logo.jpg"   /*set the path to the image that you want to be in the box*/ 
+   var editableImage = editableLogo 
+   var editableCoupon = "FTAP"  /*the coupon code*/ 
+         /*this is where the section ends, from this point you cannot edit the data*/ 
+  
+   genInter() 
+         function genInter(){ 
+             var container = document.getElementById("dev-flow-coupon-script") 
+             var interface = document.createElement("div") 
+             interface.className = "dev-flow-offer-card" 
+  
+             var interfaceWrapper = document.createElement("div") 
+             interfaceWrapper.className = "dev-flow-card-wrapper" 
+  
+             var discountBox = document.createElement("img") 
+             discountBox.className = "discount-box" 
+             discountBox.src = editableImage 
+  
+             var offerDetails = document.createElement("div") 
+             offerDetails.className = "offer-details" 
+  
+             var offerTitle = document.createElement("h3") 
+             offerTitle.innerHTML = editableTitle 
+  
+             var offer = document.createElement("p") 
+             offer.innerHTML = editableOffer 
+  
+             var coupon = document.createElement("div") 
+             coupon.className = "coupon";  coupon.innerHTML = editableCoupon 
+  
+             var couponLink = document.createElement("a") 
+             couponLink.innerHTML = "Show Coupon" 
+  
+             interface.appendChild(interfaceWrapper) 
+  
+             interfaceWrapper.appendChild(discountBox); interfaceWrapper.appendChild(offerDetails) 
+             interfaceWrapper.appendChild(coupon) 
+  
+             offerDetails.appendChild(offerTitle); offerDetails.appendChild(offer); 
+  
+             coupon.appendChild(couponLink); 
+  
+             container.parentElement.insertBefore(interface,container) 
+  
+             var couponSmall = coupon.cloneNode(true); 
+             couponSmall.className += " ss" 
+             interface.appendChild(couponSmall) 
+  
+             var tab; var bs = 700 
+             interface.onclick = function(){ 
+                 if(!tab){ 
+                     tab = document.createElement("div") 
+                     tab.className = "dev-flow-window" 
+                     var curtain = tab.cloneNode(true); curtain.className += " dev-flow-curtain" 
+  
+                     var tabContent = document.createElement("div") 
+                     tabContent.className = "dev-flow-tab" 
+  
+                     var close = document.createElement("div"); close.className = "dev-flow-close" 
+                     var closeBtn = document.createElement("a");  
+                     closeBtn.className = "dev-flow-close-btn"; closeBtn.innerHTML = "x" 
+  
+                     var title = document.createElement("h2") 
+                     title.innerHTML = editableTitle 
+  
+                     var destination = document.createElement("div") 
+                     destination.innerHTML = "Copy and paste this code at " 
+                     var link = document.createElement("a"); link.href = editableCouponLink 
+                     link.innerHTML = editableLinkAppearance 
+  
+                     var coupon = document.createElement("div"); 
+                     coupon.className = "dev-flow-copy-coupon" 
+                     var couponText = document.createElement("span") 
+                     couponText.innerHTML = editableCoupon 
+                     var copyCoupon = document.createElement("button") 
+                     copyCoupon.className = "dev-flow-copy-coupon-btn" 
+                     copyCoupon.innerHTML = "Copy" 
+  
+                     var continueLink = document.createElement("button") 
+                     continueLink.innerHTML = "Continue to " + editableLinkName 
+                     continueLink.className = "dev-flow-continue-link" 
+  
+                     tab.appendChild(curtain) 
+                     tab.appendChild(tabContent) 
+  
+                     tabContent.appendChild(close) 
+                     if(editableLogo && editableLogo.length > 0){ 
+                         var logo = document.createElement("img") 
+                         logo.src = editableLogo 
+                         logo.className = "dev-flow-logo" 
+                         tabContent.appendChild(logo) 
+                     } 
+                     tabContent.appendChild(title) 
+                     tabContent.appendChild(destination) 
+                     tabContent.appendChild(coupon) 
+                     tabContent.appendChild(continueLink) 
+  
+                     destination.appendChild(link) 
+  
+                     coupon.appendChild(couponText); coupon.appendChild(copyCoupon) 
+  
+                     close.appendChild(closeBtn) 
+  
+                     curtain.onclick = function(){remove(tab)} 
+                     closeBtn.onclick = curtain.onclick 
+                     copyCoupon.onclick = function(){copy( 
+                         editableCoupon, 
+                         function(){ 
+                             couponText.style.backgroundColor = "#e6faf6" 
+                             copyCoupon.style.backgroundColor = "#20b18c" 
+                             copyCoupon.innerHTML = "Copied" 
+                         } 
+                     )} 
+                     continueLink.onclick = function(){window.open(editableCouponLink)} 
+                     addEvent(window,"resize",adjust) 
+                 } 
+                 function adjust(){ 
+                     if(window.innerWidth < bs){ 
+                         tab.id = "dev-flow-ss" 
+                     } 
+                     else{ 
+                         tab.id = "" 
+                     } 
+                 } 
+                 document.body.appendChild(tab) 
+                 adjust() 
+                 window.open(editableCouponLink) 
+             } 
+         } 
+         function remove(element){ 
+             /*removes an element from its container*/ 
+             try{element.remove()} 
+             catch(err){ 
+                 try{element.parentElement.removeChild(element)} 
+                 catch(err){} 
+             } 
+         } 
+         function addEvent(element,event,cb){ 
+             try{element.addEventListener(event,cb);} 
+             catch(err){ 
+                 try{element.attachEvent("on"+event.toString(),cb)} 
+                 catch(err){element["on"+event.toString()] = cb;} 
+             }    
+         } 
+         function copy(text,cb){ 
+             try{ 
+                 navigator.clipboard.writeText(text).then(cb) 
+             } 
+             catch(err){ 
+                 document.execCommand("copy",false,text) 
+                 console.log(document.execCommand) 
+             } 
+         } 
+     }()
+</script>
+<style>
+.dev-flow-offer-card *{box-sizing: border-box; color:#333} 
+         .dev-flow-offer-card a{text-decoration: none;} 
+         .dev-flow-offer-card{ 
+             background-color: #fff; 
+             border-radius: 10px; 
+             cursor: pointer; 
+             box-sizing: border-box; 
+             color:#333; 
+             font-family: 'Open Sans',sans-serif ; 
+             max-width:850px; 
+             border:1px solid #c8c8ff; 
+             min-width: 280px; 
+         } 
+  
+         .dev-flow-offer-card .dev-flow-card-wrapper{ 
+             display:flex; 
+             align-items: center; 
+             padding:2% 
+         } 
+  
+         .dev-flow-offer-card .discount-box{ 
+             display: flex; 
+             flex-direction: column; 
+             align-items: center; 
+             align-self:center; 
+             justify-content: center; 
+             border-radius:8px; 
+             border:1px dashed #444; 
+             text-align: center; 
+             padding:3%; 
+             width:20% 
+         } 
+  
+         .dev-flow-card-wrapper .offer-details h3{font-size:25px; margin-top:0; margin-bottom: 1%;} 
+         .dev-flow-card-wrapper .offer-details{ 
+             font-weight: 400; 
+             font-family: Open Sans,sans-serif; 
+             overflow: hidden; 
+             text-overflow: ellipsis; 
+             word-break: break-word; 
+             padding:1% 3% 1% 3%; 
+         } 
+         .dev-flow-card-wrapper .offer-details p{font-size:15px} 
+  
+         .dev-flow-offer-card .coupon{ 
+             padding:2%; border-radius: 8px; background-color:#edf1f8; padding:2% 4% 2% 4%; 
+             width:200px; border:1px dashed #3258b3; font-weight: 600; position:relative;  
+             text-align: right; 
+         } 
+         .dev-flow-offer-card .coupon a{ 
+             position: absolute; 
+             top: 0; 
+             height: 100%; 
+             width: 80%; 
+             display: flex; 
+             justify-content: center; 
+             align-items: center; 
+             left: 0; 
+             border-radius: 4px 0px 0px 4px; 
+             background: #2e57b4; 
+             color: #fff; 
+             transition: .4s; 
+         } 
+         .dev-flow-offer-card .coupon a:hover{width:76%} 
+         .dev-flow-offer-card .coupon:hover{border-style:solid} 
+  
+         .dev-flow-offer-card .coupon.ss{display:none} 
+  
+         .dev-flow-window *{box-sizing: border-box;} 
+         .dev-flow-window{position:fixed; width:100%; height:100%; top:0; z-index:10000; 
+         font-family:'Open Sans',sans-serif; text-align: center; color:#444; font-size:20px} 
+         .dev-flow-window a{text-decoration: none;} 
+         .dev-flow-window .dev-flow-curtain{background-color: rgba(0,0,0,0.3);} 
+         .dev-flow-window .dev-flow-tab{width:60%; height:100%; margin:auto; position: relative;  
+             z-index:10001; background-color: #fff; padding:2%; border-radius: 4px; overflow:auto} 
+         .dev-flow-window .dev-flow-close{text-align: right;} 
+         .dev-flow-window .dev-flow-close .dev-flow-close-btn{font-size:25px; cursor:pointer} 
+         .dev-flow-window .dev-flow-logo{width:80%; max-width:80px; margin:auto; display:block} 
+         .dev-flow-window .dev-flow-copy-coupon{ 
+             margin: auto; 
+             max-width: 100%; 
+             background: #edf1f8; 
+             display: flex; 
+             justify-content: space-around; 
+             align-items: center; 
+             padding: 0.5%; 
+             border-radius: 4px; 
+             margin-top: 2%; 
+             width:inherit; 
+             border:1px dashed #3258b3; 
+         } 
+         .dev-flow-window .dev-flow-copy-coupon span{ 
+             font-size: 30px; 
+             padding: 1%; 
+             width: 100%; 
+         } 
+         .dev-flow-window .dev-flow-copy-coupon button{ 
+             align-self: stretch; 
+             background: #3258b3; 
+             color: #fff; 
+             padding: 1% 10%; 
+             display: flex; 
+             align-items: center; 
+             cursor:pointer; 
+             word-break:normal 
+         } 
+         .dev-flow-window .dev-flow-continue-link{ 
+             display: block; 
+             margin: auto; 
+             margin-top: 5%; 
+             padding: 2%; 
+             color: #3258b3; 
+             font-size: 18px; 
+             background: #edf1f8; 
+         } 
+         #dev-flow-ss .dev-flow-tab{ 
+             width:100%; height:90%; position:fixed; bottom:0; left:0; 
+         } 
+         #dev-flow-ss *{font-size:16px} 
+         #dev-flow-ss h2{font-size:20px} 
+         .dev-flow-window button{border:none; font-size:20px; border-radius:4px; cursor:pointer} 
+  
+         @media only screen and (min-width:700px){ 
+             .dev-flow-offer-card{box-shadow: 0 2px 6px 4px rgba(51,51,51,.09);} 
+         } 
+         @media only screen and (max-width:600px){ 
+             .dev-flow-card-wrapper .coupon{display:none} 
+             .dev-flow-offer-card .coupon.ss{display:block; margin:auto} 
+             .dev-flow-offer-card .discount-box{width:30%} 
+             .dev-flow-card-wrapper .offer-details h3{font-size:20px} 
+             .dev-flow-offer-card *{font-size: 15px;} 
+         } 
+         @media only screen and (max-width:450px){ 
+             .dev-flow-card-wrapper .discount-box{width:50%} 
+             .dev-flow-card-wrapper .offer-details{width:60%} 
+         }
+</style>
