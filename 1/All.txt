@@ -1,0 +1,2 @@
+<link rel = "stylesheet" href = "developerflow.github.io/host/1/coupon-style.css">
+<script id="dev-flow-coupon-script" src = "developerflow.github.io/host/1/coupon-generator.js><script>

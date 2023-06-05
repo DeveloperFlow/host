@@ -1,0 +1,136 @@
+.dev-flow-offer-card *{box-sizing: border-box; color:#333}
+        .dev-flow-offer-card a{text-decoration: none;}
+        .dev-flow-offer-card{
+            background-color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            box-sizing: border-box;
+            color:#333;
+            font-family: 'Open Sans',sans-serif ;
+            max-width:850px;
+            border:1px solid #c8c8ff;
+            min-width: 280px;
+        }
+        
+        .dev-flow-offer-card .dev-flow-card-wrapper{
+            display:flex;
+            align-items: center;
+            padding:2%
+        }
+        
+        .dev-flow-offer-card .discount-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self:center;
+            justify-content: center;
+            border-radius:8px;
+            border:1px dashed #444;
+            text-align: center;
+            padding:3%;
+            width:20%
+        }
+    
+        .dev-flow-card-wrapper .offer-details h3{font-size:25px; margin-top:0; margin-bottom: 1%;}
+        .dev-flow-card-wrapper .offer-details{
+            font-weight: 400;
+            font-family: Open Sans,sans-serif;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+            padding:1% 3% 1% 3%;
+        }
+        .dev-flow-card-wrapper .offer-details p{font-size:15px}
+        
+        .dev-flow-offer-card .coupon{
+            padding:2%; border-radius: 8px; background-color:#edf1f8; padding:2% 4% 2% 4%;
+            width:200px; border:1px dashed #3258b3; font-weight: 600; position:relative; 
+            text-align: right;
+        }
+        .dev-flow-offer-card .coupon a{
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            border-radius: 4px 0px 0px 4px;
+            background: #2e57b4;
+            color: #fff;
+            transition: .4s;
+        }
+        .dev-flow-offer-card .coupon a:hover{width:76%}
+        .dev-flow-offer-card .coupon:hover{border-style:solid}
+        
+        .dev-flow-offer-card .coupon.ss{display:none}
+
+        .dev-flow-window *{box-sizing: border-box;}
+        .dev-flow-window{position:fixed; width:100%; height:100%; top:0; z-index:10000;
+        font-family:'Open Sans',sans-serif; text-align: center; color:#444; font-size:20px}
+        .dev-flow-window a{text-decoration: none;}
+        .dev-flow-window .dev-flow-curtain{background-color: rgba(0,0,0,0.3);}
+        .dev-flow-window .dev-flow-tab{width:60%; height:100%; margin:auto; position: relative; 
+            z-index:10001; background-color: #fff; padding:2%; border-radius: 4px; overflow:auto}
+        .dev-flow-window .dev-flow-close{text-align: right;}
+        .dev-flow-window .dev-flow-close .dev-flow-close-btn{font-size:25px; cursor:pointer}
+        .dev-flow-window .dev-flow-logo{width:80%; max-width:80px; margin:auto; display:block}
+        .dev-flow-window .dev-flow-copy-coupon{
+            margin: auto;
+            max-width: 100%;
+            background: #edf1f8;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.5%;
+            border-radius: 4px;
+            margin-top: 2%;
+            width:inherit;
+            border:1px dashed #3258b3;
+        }
+        .dev-flow-window .dev-flow-copy-coupon span{
+            font-size: 30px;
+            padding: 1%;
+            width: 100%;
+        }
+        .dev-flow-window .dev-flow-copy-coupon button{
+            align-self: stretch;
+            background: #3258b3;
+            color: #fff;
+            padding: 1% 10%;
+            display: flex;
+            align-items: center;
+            cursor:pointer;
+            word-break:normal
+        }
+        .dev-flow-window .dev-flow-continue-link{
+            display: block;
+            margin: auto;
+            margin-top: 5%;
+            padding: 2%;
+            color: #3258b3;
+            font-size: 18px;
+            background: #edf1f8;
+        }
+        #dev-flow-ss .dev-flow-tab{
+            width:100%; height:90%; position:fixed; bottom:0; left:0;
+        }
+        #dev-flow-ss *{font-size:16px}
+        #dev-flow-ss h2{font-size:20px}
+        .dev-flow-window button{border:none; font-size:20px; border-radius:4px; cursor:pointer}
+        
+        @media only screen and (min-width:700px){
+            .dev-flow-offer-card{box-shadow: 0 2px 6px 4px rgba(51,51,51,.09);}
+        }
+        @media only screen and (max-width:600px){
+            .dev-flow-card-wrapper .coupon{display:none}
+            .dev-flow-offer-card .coupon.ss{display:block; margin:auto}
+            .dev-flow-offer-card .discount-box{width:30%}
+            .dev-flow-card-wrapper .offer-details h3{font-size:20px}
+            .dev-flow-offer-card *{font-size: 15px;}
+        }
+        @media only screen and (max-width:450px){
+            .dev-flow-card-wrapper .discount-box{width:50%}
+            .dev-flow-card-wrapper .offer-details{width:60%}
+        }
