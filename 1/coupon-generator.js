@@ -5,7 +5,7 @@ var _$ = function(){
   var editableCouponLink = "https://jasper.ai/free-trial?fpr=bonus100" /*redirect link*/
   var editableLinkAppearance = "jasper.ai" /*how the link appears in the pop up*/
   var editableLinkName = "jasper" /*the name of the website for redirect*/
-  var editableLogo = "https://developerflow.github.io/host/Jasper_Logo.jpg"   /*set the path to the image that you want to be in the box*/
+  var editableLogo = "https://developerflow.github.io/host/1/Jasper_Logo.jpg"   /*set the path to the image that you want to be in the box*/
   var editableImage = editableLogo
   var editableCoupon = "FTAP"  /*the coupon code*/
         /*this is where the section ends, from this point you cannot edit the data*/
