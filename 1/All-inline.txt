@@ -10,9 +10,8 @@ var _$ = function(){
    var editableCoupon = "FTAP"  /*the coupon code*/
    var editableCouponBtn = "Show coupon" /*the button that the user clicks to open the tab*/
    var editableCopyCoupon = "Copy" /*the button that was formally "copy code"*/
-   var editableInstruction = "Copy and paste this code at " /*the instruction at the open tab, previously "copy and paste this link at"*/ 
-   var editableLinkAppearance = "jasper.ai" /*how the link appears in the pop up beside the instruction, you can just leave it blank if there is no link that the user should be able to click*/
-
+   var editableInstruction = "Copy and paste this code at " /*the instruction at the open tab, previously "copy and paste this link at"*/
+   
     /*this is where the section ends, from this point you cannot edit the data*/ 
   var storagekey = "dev_flow_storage"
   var interface
@@ -78,20 +77,14 @@ var _$ = function(){
   
                      var destination = document.createElement("div") 
                      destination.innerHTML = editableInstruction 
-                     var link = document.createElement("a"); link.href = editableCouponLink 
-                     link.innerHTML = editableLinkAppearance 
-  
+                    
                      var coupon = document.createElement("div"); 
                      coupon.className = "dev-flow-copy-coupon" 
                      var couponText = document.createElement("span") 
                      couponText.innerHTML = editableCoupon 
-                     var copyCoupon = document.createElement("button") 
+                     var copyCoupon = document.createElement("a") 
                      copyCoupon.className = "dev-flow-copy-coupon-btn" 
                      copyCoupon.innerHTML = editableCopyCoupon
-  
-                     var continueLink = document.createElement("button") 
-                     continueLink.innerHTML = "Continue to " + editableLinkName 
-                     continueLink.className = "dev-flow-continue-link" 
   
                      tab.appendChild(curtain) 
                      tab.appendChild(tabContent) 
@@ -103,29 +96,22 @@ var _$ = function(){
                          logo.className = "dev-flow-logo" 
                          tabContent.appendChild(logo) 
                      } 
-                     tabContent.appendChild(title) 
+                     tabContent.appendChild(title)
                      tabContent.appendChild(destination) 
-                     tabContent.appendChild(coupon) 
-                     tabContent.appendChild(continueLink) 
-  
-                     destination.appendChild(link) 
-  
+                     tabContent.appendChild(coupon)  
                      coupon.appendChild(couponText); coupon.appendChild(copyCoupon) 
   
                      close.appendChild(closeBtn) 
   
                      curtain.onclick = function(){remove(tab)} 
                      closeBtn.onclick = curtain.onclick 
-                     copyCoupon.onclick = function(){copy( 
-                         editableCoupon, 
-                         function(){ 
-                             couponText.style.backgroundColor = "#e6faf6" 
-                             copyCoupon.style.backgroundColor = "#20b18c" 
-                             copyCoupon.innerHTML = "Copied" 
-                         } 
-                     )} 
-                     continueLink.onclick = function(){window.open(editableCouponLink)} 
-                     addEvent(window,"resize",adjust) 
+                      addEvent(window,"resize",adjust)
+                     copyCoupon.onclick = function(){copy(  
+                          editableCoupon,  
+                          function(){  
+                            location.href = editableCouponLink
+                          }
+                      )} 
                  } 
                  function adjust(){ 
                      if(window.innerWidth < bs){ 
@@ -164,14 +150,12 @@ var _$ = function(){
                  catch(err){element["on"+event.toString()] = cb;} 
              }    
          } 
-         function copy(text,cb){ 
+         function copy(text,cb,errCb){
+           if(!errCb){errCb = cb}
              try{ 
                  navigator.clipboard.writeText(text).then(cb) 
              } 
-             catch(err){ 
-                 document.execCommand("copy",false,text) 
-                 console.log(document.execCommand) 
-             } 
+             catch(err){errCb()} 
          }
          function checkTab(){
            var isOpen
@@ -281,15 +265,16 @@ var _$ = function(){
              padding: 1%; 
              width: 100%; 
          } 
-         .dev-flow-window .dev-flow-copy-coupon button{ 
+         .dev-flow-window .dev-flow-copy-coupon .dev-flow-copy-coupon-btn{ 
              align-self: stretch; 
              background: #3258b3; 
-             color: #fff; 
+             color: #fff !important; 
              padding: 1% 10%; 
              display: flex; 
              align-items: center; 
              cursor:pointer; 
-             word-break:normal 
+             word-break:normal;
+             border-radius:4px
          } 
          .dev-flow-window .dev-flow-continue-link{ 
              display: block; 
