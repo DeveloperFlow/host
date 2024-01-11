@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saas Landing Page Community</title>
+    <link rel="stylesheet" href="lib/css/literal.css">
+    <link rel="stylesheet" href="css/general.css">
+    <style>
+        .minor-pad{padding:3%;}
+        #main{min-height:0}
+        #welcome-board .part-1{width:50%}
+        #welcome-board .part-1 h1{font-size:50px}
+        #welcome-board .part-2{width:50%; text-align: center;}
+        #welcome-board .part-2 img{width:95%; height:auto}
+
+        #customers .item{display:inline-block; color:#ddd}
+        #customers .item span{color:#ddd; margin-left:5px}
+        #customers .item.space-left{margin-left:5%}
+
+        #section-2 .part-1{width:50%}
+        #section-2 .part-2{width:50%; padding:3%}
+        #section-2 .part-2 .item.flex{
+          align-items: flex-start; margin-top:3%;
+        }
+        #section-2 .part-2 .item.flex h2{
+          margin:0px;
+        }
+        #section-2 .part-2 img.icon{
+          max-width:40px; max-height: auto;
+          margin-right:3%; background-color: #fff;
+          padding:2%;
+        }
+        #rating{margin-top:8%;}
+        #rating .rating{width:49%}
+        #rating .stars{font-size: 0px;}
+        #rating .stars .icon{
+          width:17%; margin-left:3px;
+        }
+        #rating .stars .icon.e{margin-left:0px}
+        #rating .space-up{margin-top:5%;}
+
+        #section-3 #features h1{width:30%; margin:0}
+        #section-3 #features div{width:50%; padding:3%}
+        #section-3 .feature img{width:100%; height:auto;}
+
+        #section-4 .part-1{width:50%}
+        #section-4 #benefit-list .benefit{margin-top:4%}
+        #section-4 #benefit-list .benefit img{
+          width:20%; width:8vw; max-width:20px;
+        }
+        #section-4 .part-2{width:50%}
+        #section-4 .part-2 img{width:95%; height:auto}
+
+        #bill-interval .wrapper{padding:1%; display: inline;}
+        #bill-interval button{background-color: transparent;}
+        #bill-interval button.current{background-color: #0d9;}
+        #plans .plan{padding:2%; width:33.33%; max-width:350px}
+        #plans .plan h3{margin-bottom:0}
+        #plans .plan h2{margin:0}
+        #plans .plan img{
+          width:20%; width:8vw; max-width:20px;
+        }
+        #plans .plan .plan-phrase{width:75%; margin:auto; margin-top:3%; color:#aaa}
+        #plans .plan .plan-offers{padding:2% 3% 2% 3%}
+        #plans .plan .plan-offers .offer{margin-top:4%}
+        #plans .plan .button.accept{width:80%; margin-top:4%; padding:3%}
+        #plans .plan#pro-plan{padding:0}
+        #plans .plan#pro-plan *{color:#fff}
+        #plans .plan#pro-plan .plan-offers *{color:#444}
+        #plans .plan#pro-plan .wrapper{background-color: rgba(244,244,244,0.3); padding:2% 4% 4% 4%}
+        #plans .plan#pro-plan .discount{background-color: rgba(255,255,255,0.3);}
+        #plans .plan#pro-plan .octa.button.accept{
+          width:200px;
+          padding:0px;
+          height:40px;
+          color:#fff
+        }
+        #pro-plan .octa:before{
+          width:180px;
+          border-left: 10px solid #eee;
+          border-right: 10px solid #eee;
+          border-bottom: 10px solid #0d9;
+        }
+        #pro-plan .octa:after{
+          width:180px;
+          border-left: 10px solid #eee;
+          border-right: 10px solid #eee;
+          border-top: 10px solid #0d9;
+        }
+        #free-plan .plan-offers,#business-plan .plan-offers{background-color: #fafafa;}
+
+        #section-6{background-color: #2b2a33; color:#fff; margin-top:5%}
+        #section-6 .part-1{width:45%}
+        #people{font-size:0px;}
+        #section-6 .part-1 img.icon{
+          max-width: none; width:18%;
+        }
+        #section-6 .part-2{width:50%; max-width: 500px; background-color: rgba(50,50,105,0.3); padding:2% 5% 5% 5%}
+        #section-6 *{color:#fdfdfd}
+    </style>
+</head>
+<body class="my-fonts">
+    <div class="hfull brand-gradient minor-pad" id="main">
+        <div id="menu" class="flex vcenter apart full-width">
+            <h1 id="brand-logo">Biccas</h1>
+            <div id="menu-links" class="flex vcenter apart">
+                <div class="links-1 flex vcenter">
+                    <a href="index.html" class="current">Home</a>
+                    <a href="Product.html">Product</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About us</a>
+                </div>
+                <div class="links-2 flex vcenter">
+                    <a href="login.html">Login</a>
+                    <button class="button" style="padding:4%">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div id="welcome-board" class="minor-pad flex vcenter">
+            <div class="part-1">
+                <h1 style="margin:0">We're here to Increase your Productivity</h1>
+                <!--line drawn with canvas to underline this text-->
+                <div class="space-up">
+                    Let's make your work more organize and easily using the Takio Dashboard with many of the latest featuresin managing work every day.
+                </div>
+                <div class="flex vcenter space-up">
+                    <button class="brand-theme-bg white octa">Try free trial</button>
+                    <button class="flex vcenter space-left button" style="background-color:transparent;"><img src="images/icon/play.png" alt="" class="icon">
+                      <span style="margin-left:5px">View Demo</span></button>
+                </div>
+            </div>
+            <div class="part-2">
+                <img src="images/offer-image.jpg" alt="">
+            </div>
+        </div>
+        <div>
+            <h1 class="center-text" style="font-size:30px">More than 25,000 teams use Collabs</h1>
+            <div id="customers" class="center-text">
+                <div class="item">
+                    <div class="flex vcenter">
+                        <img src="images/icon/unsplash.png" alt="" class="icon">
+                        <span>Unsplash</span>
+                    </div>
+                </div>
+                <div class="item space-left">
+                    <div class="flex vcenter">
+                        <img src="images/icon/notion.png" alt="" class="icon">
+                        <span>Notion</span>
+                    </div>
+                </div>
+                <div class="item space-left">
+                    <div class="flex vcenter">
+                        <img src="images/icon/intercom.png" alt="" class="icon">
+                        <span>INTERCOM</span>
+                    </div>
+                </div>
+                <div class="item space-left">
+                    <div class="flex vcenter">
+                        <img src="images/icon/descript.png" alt="" class="icon">
+                        <span>descript</span>
+                    </div>
+                </div>
+                <div class="item space-left">
+                    <div class="flex vcenter">
+                        <img src="images/icon/grammerly.png" alt="" class="icon">
+                        <span>Grammarly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-2" class="flex hcenter minor-pad">
+        <div class="part-1">
+            <h1>How we support our pratner all over the world</h1>
+            <div class="grey">
+                SaaS became a common delivery model for many business applicaion , including office sofware, messaging software, payroll processing software, 
+                DBMS software, management software
+            </div>
+            <div id="rating" class="flex vcenter space-up apart">
+                <div class="rating">
+                    <div class="stars">
+                      <img class="icon e" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                    </div>
+                    <div class="bold space-up">4.9 / 5 rating</div>
+                    <div class="bold grey space-up">databricks</div>
+                </div>
+                <div class="rating">
+                    <div class="stars">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/star.png">
+                      <img class="icon" src="images/icon/grey-star.png">
+                    </div>
+                    <div class="bold space-up">4.8 / 5 rating</div>
+                    <div class="bold grey space-up">chainalysis</div>
+                </div>
+            </div>
+        </div>
+        <div class="part-2">
+            <div class="item flex">
+                <img src="images/icon/analysis.png" alt="" class="icon">
+                <div>
+                    <h2>
+                        Publishing
+                    </h2>
+                    <span>
+                        plan, collaborate, and publishing your content that drives meaningful engagement and growth for your brand
+                    </span>
+                </div>
+            </div>
+            <div class="item flex">
+                <img src="images/icon/pie-chart.png" alt="" class="icon">
+                <div>
+                    <h2>
+                        Analytics
+                    </h2>
+                    <span>
+                        Analyze your performance and create gorgeous report
+                    </span>
+                </div>
+            </div>
+            <div class="item flex">
+                <img src="images/icon/window.png" alt="" class="icon">
+                <div>
+                    <h2>
+                        Engagement
+                    </h2>
+                    <span>
+                        Quickly navigate your content and engage with you audience
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-3" class="minor-pad">
+        <div class="flex vcenter apart" id="features">
+            <h1>Our Features you can get</h1>
+            <div>
+                We offer a variey of ineresting feaures that can help you increase your productivity at work and manage your project easily
+            </div>
+            <button class="button octa brand-theme-bg white">Get Started</button>
+        </div>
+        <div class="flex vend hcenter">
+            <div class="feature">
+                <img src="images/collaborative-teams.png" alt="">
+                <div>
+                    <h2>Collaboration Teams</h2>
+                    <div>Here you can handle projects together with team virtually</div>
+                </div>
+            </div>
+            <div class="feature space-left">
+                <img src="images/cloud-storage.png" alt="">
+                <div>
+                    <h2>Cloud Storage</h2>
+                    <div>No need to worry about storage because we provide storage up to 2 TB</div>
+                </div>
+            </div>
+            <div class="feature space-left">
+                <img src="images/daily-analytics.png" alt="">
+                <div>
+                    <h2>Daily Analytics</h2>
+                    <div>We always provide useful information to make it easier for you every day</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-4" class="minor-pad flex vcenter apart">
+        <div id="part-1">
+            <h1>What Benefit Will You Get</h1>
+            <div id="benefit-list">
+                <div class="benefit flex vcenter">
+                    <img src="images/icon/good.png" alt="">
+                    <span class="block space-left">Free Consulting With Expert, Saving Money</span>
+                </div>
+                <div class="benefit flex vcenter">
+                    <img src="images/icon/good.png" alt="">
+                    <span class="block space-left">Online Banking</span>
+                </div>
+                <div class="benefit flex vcenter">
+                    <img src="images/icon/good.png" alt="">
+                    <span class="block space-left">Investment Report Every Month</span>
+                </div>
+                <div class="benefit flex vcenter">
+                    <img src="images/icon/good.png" alt="">
+                    <span class="block space-left">Saving money for the future</span>
+                </div>
+                <div class="benefit flex vcenter">
+                    <img src="images/icon/good.png" alt="">
+                    <span class="block space-left">Online Transaction</span>
+                </div>
+            </div>
+        </div>
+        <div id="part-2">
+            <img src="images/benefits-illustration.png" alt="">
+        </div>
+    </div>
+    <div id="section-5">
+        <h1 class="center-text">Choose Plan <br/> That's Right For You</h1>
+        <div class="center-text">choose plan that works best for you, feel free to contact us</div>
+        <div class="center-text space-up" id="bill-interval">
+            <div class="white-bg wrapper">
+                <button class="button">Bill Monthly</button>
+                <button class="button current">Bill Yearly</button>
+            </div>
+        </div>
+        <div id="plans" class="space-up flex vcenter hcenter">
+            <div class="plan center-text white-bg" id="free-plan">
+                <h3>Free</h3>
+                <div class="plan-phrase space-up">Have a go and test your superpowers</div>
+                <h2>
+                    <sup style="font-size:12px; font-weight:normal">$</sup>0
+                </h2>
+                <div class="plan-offers">
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">2 Users</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">2 Files</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Public Share & Comments</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Chat Support</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">New Income Apps</span>
+                    </div>
+                    <button class="button white-bg brand-theme accept">Signup for free</button>
+                </div>
+            </div>
+            <div class="plan center-text brand-theme-bg white" id="pro-plan">
+                <div style="padding:4%">
+                    <h3>Pro</h3>
+                    <div class="space-up plan-phrase">Experiment the power of infinite possiblities</div>
+                </div>
+                <div class="wrapper minor-pad">
+                    <h2>
+                        <sup style="font-size:12px; font-weight:normal">$</sup>8
+                    </h2>
+                    <button class="button discount">Save $50 a year</button>
+                    <div class="plan-offers white-bg black space-up minor-pad">
+                        <div class="offer flex vcenter">
+                            <img src="images/icon/good.png" alt="">
+                            <span class="block space-left">4 Users</span>
+                        </div>
+                        <div class="offer flex vcenter">
+                            <img src="images/icon/good.png" alt="">
+                            <span class="block space-left">All apps</span>
+                        </div>
+                        <div class="offer flex vcenter">
+                            <img src="images/icon/good.png" alt="">
+                            <span class="block space-left">Unlimited editable exports</span>
+                        </div>
+                        <div class="offer flex vcenter">
+                            <img src="images/icon/good.png" alt="">
+                            <span class="block space-left">Folders and collaboration</span>
+                        </div>
+                        <div class="offer flex vcenter">
+                            <img src="images/icon/good.png" alt="">
+                            <span class="block space-left">All incoming apps</span>
+                        </div>
+                        <button class="button white brand-theme-bg octa space-up accept">Go to pro</button>
+                    </div>
+                </div>
+            </div>
+            <div class="plan center-text white-bg" id="business-plan">
+                <h3>Business</h3>
+                <div class="plan-phrase space-up">Unveil new superpowers and join the Design League</div>
+                <h2>
+                    <sup style="font-size:12px; font-weight:normal">$</sup>16
+                </h2>
+                <div class="plan-offers">
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">All the features of pro plan</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Account success Manager</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Single Sign-On (SSO)</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Co-conception program</span>
+                    </div>
+                    <div class="offer flex vcenter">
+                        <img src="images/icon/good.png" alt="">
+                        <span class="block space-left">Collaboration-Soon</span>
+                    </div>
+                    <button class="button white-bg brand-theme accept">Goto Business</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-6" class="minor-pad flex vcenter apart">
+        <div class="part-1">
+            <h1 class="white">
+                People are Saying About Dowhith
+            </h1>
+            <div>Everything you need to accept payment, and grow your money of manage anywhere on planet</div>
+            <div style="font-size:60px">"</div>
+            <div>
+                I am very helped by this E-walet application, my days are very easy to use this application and its very helpful in my life, 
+                even i can pay a short time
+                <div class="space-up">
+                    _Aria Zinanrio
+                </div>
+                <div style="margin-top:3%" id="people">
+                    <!--pictures of people-->
+                    <img class="icon" src="images/p1.png">
+                    <img class="icon space-left" src="images/p2.png">
+                    <img class="icon space-left" src="images/p3.png">
+                    <img class="icon space-left" src="images/p4.png">
+                    <img class="icon space-left" src="images/icon/play-icon.png">
+                </div>
+            </div>
+        </div>
+        <div class="part-2">
+            <img src="images/icon/euro-stack.png" alt="" class="login-logo">
+            <div style="font-size:25px" class="center-text">Get Started</div>
+            <div>
+                <label for="email" class="block">Email</label>
+                <input type="email" placeholder="enter your email address" class="input space-up">
+            </div>
+            <div class="space-up">
+                <label for="message" class="block">Message</label>
+                <textarea name="message" id="message" placeholder="what are you say?" class="input space-up"></textarea>
+            </div>
+            <div class="space-up">
+                <button class="button brand-theme-bg white full-width" style="padding:3%">Request Demo</button>
+            </div>
+            <div class="right-text">
+                <a href="create-account">Or Start Free Trial</a>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="flex vcenter apart">
+        <div class="part-1">
+            <h1 id="brand-logo">Biccas</h1>
+            <div class="space-up">
+                Get started now trying our product
+            </div>
+            <div class="space-up flex vcenter octa fancy-input">
+                <input type="email" placeholder="enter your email here">
+                <button class="brand-theme-bg white">&#8594;</button>
+            </div>
+        </div>
+        <div class="part-2 flex vcenter apart">
+            <div class="links">
+                <div class="white">Support</div>
+                <a href="">Help Center</a>
+                <a href="">Account Information</a>
+                <a href="">About</a>
+                <a href="">Contact Us</a>
+            </div>
+            <div class="links">
+                <div class="white">Help and Solution</div>
+                <a href="">Talk to Support</a>
+                <a href="">Support docs</a>
+                <a href="">System Status</a>
+                <a href="">Covid responde</a>
+            </div>
+            <div class="links">
+                <div class="white">Product</div>
+                <a href="">Update</a>
+                <a href="">Security</a>
+                <a href="">Beta test</a>
+                <a href="">Pricing Product</a>
+            </div>
+        </div>
+    </div>
+    <div id="legal" class="flex vcenter apart">
+        <span>&#169; 2022 Biccas inc. Copyright and rights reserved</span>
+        <div class="flex vcenter">
+            <a href="">Terms and Conditions</a>
+            <ul>
+                <li><a href="">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
