@@ -1,0 +1,78 @@
+/*general asthetics*/
+body{margin:0; padding:0; background-color: #fafafa; min-width:800px}
+*{font-family:Arial, Helvetica, sans-serif; color:#333}
+a{text-decoration: none;}
+.brand-gradient{background-image:linear-gradient(90deg,#dbffff,#fff,#fff);}
+.brand-theme-bg{background-color: #0d9;}
+.brand-theme{color:#0d9}
+.button{padding:1% 4% 1% 4%; border:none}
+.input{width:100%; padding:2%; border:none; border-radius: 8px;}
+.octa{
+  position: relative;
+  width:100px;
+  height:40px;
+  border:none;
+  outline:none;
+  padding:0px;
+}
+.octa:before{
+  position: absolute;
+  top:0;
+  left:0;
+  content:"";
+  height:0;
+  width:80px;
+  border-right:10px solid #eee;
+  border-bottom:10px solid #0d9;
+  border-left:10px solid #eee;
+}
+.octa:after{
+  position: absolute;
+  bottom:0;
+  left:0;
+  content:"";
+  height:0;
+  width:80px;
+  border-right:10px solid #eee;
+  border-top:10px solid #0d9;
+  border-left:10px solid #eee;
+}
+input:focus{border:none; outline:none}
+
+/*menu*/
+#menu{padding:0% 2% 0% 2%}
+#menu a{color:#999999;}
+#menu a.current{color:#000}
+#menu #menu-links{width:60%}
+#menu .links-1{width:70%; justify-content: flex-end;}
+#menu .links-1 a{margin-left:5%}
+#menu .links-2{width:30%; justify-content: flex-end;}
+#menu .links-2 button{background-color:#0d9; border:none; color:#fff}
+#menu .links-2 a{margin-right:5%}
+#brand-logo{color:#0d9 !important; margin:0}
+
+/*footer*/
+#footer{background-color: #2b2a33; padding:2%}
+#footer *{color:#eee}
+#footer .part-1{width:45%}
+#footer .part-2{width:50%}
+#footer .fancy-input{border:1px solid #999; padding:2%; width:300px;}
+#footer .fancy-input:before{
+  width:280px;
+  border-left: 10px solid #000;
+  border-right: 10px solid #000;
+  border-bottom: 10px solid transparent;
+}
+#footer .fancy-input:after{
+  width:280px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+#footer .fancy-input input{background-color: transparent; border:none; width:100%}
+#footer .fancy-input button{border:none}
+#footer .part-2 a{display:block; margin-top:5%; color:#888}
+#footer .part-2 .links{width:30%}
+#footer .part-2 .links div{margin-bottom:2%}
+#legal{padding:2%; background-color: #2b2a33;}
+#legal *{color:#fff}
