@@ -41,15 +41,15 @@
         #rating .stars .icon.e{margin-left:0px}
         #rating .space-up{margin-top:5%;}
 
-        #section-3 #features h1{width:30%; margin:0}
-        #section-3 #features div{width:50%; padding:3%}
+        #features h1{width:30%; margin:0}
+        #features div{width:50%; padding:3%}
         #section-3 .feature{
           width:33%;
         }
         #section-3 .feature.space-left{
           width:31%;
         }
-        #section-3 .feature img{width:100%; height:auto;}
+        #section-3 .feature img{width:80%; height:auto; display:block; margin: auto}
 
         #section-4 .part-1{width:50%}
         #section-4 #benefit-list .benefit{margin-top:4%}
@@ -105,22 +105,104 @@
         }
         #section-6 .part-2{width:50%; max-width: 500px; background-color: rgba(50,50,105,0.3); padding:2% 5% 5% 5%}
         #section-6 *{color:#fdfdfd}
+        
+        /*smaller screens*/
+        @media only screen and (max-width:800px){
+          #welcome-board{
+              display:block;
+          }
+          #welcome-board .part-1{
+              width: 100%;
+          }
+          #welcome-board .part-1 h1{
+              font-size: 40px;
+          }
+          #welcome-board .part-2{
+              width: 100%;
+              margin-top: 2%;
+          }
+          
+          #section-2{display: block}
+          #section-2 .part-1, #section-2 .part-2{width:100%}
+          
+          #features{
+              display: block;
+          }
+          #features h1{width: 100%}
+          #features div{width: 100%}
+          #features-specs{display:block}
+          #features-specs .feature{width: 100% !important; text-align: center; margin-top:3%}
+          #features-specs .feature img{
+              width:30%;
+          }
+          
+          #section-4{
+              display: block; text-align: center;
+          }
+          #section-4 .part-1{width:100%}
+          #section-4 .part-2{width:100%;}
+          #section-4 .part-2 img{width: 80% !important;}
+          #section-4 #benefit-list{text-align: left}
+          
+          #plans{display: block}
+          #plans .plan{width: 100%; max-width:400px; margin: auto}
+        
+        #section-6{display: block}
+        #section-6 .part-1{width: 80%; margin: auto;}
+        #section-6 .part-2{width: 100%; margin: auto; margin-top: 3%}
+        }
     </style>
+    <script>
+        function single(word,target){  /*searches "word" and makes sure that there are no more than 2 consecutive
+	        "target"s by making each occurence a single "target"
+	        */
+	        var targetExp = new RegExp(target+"+","g")
+	        return word.replace(targetExp,target)
+        }
+        function changeClass(element,oldClass,newClass){
+          //changes the css class of an element
+          if(newClass instanceof Array){
+              for(var i=0; i < newClass.length; i++){
+                changeClass(element,oldClass,newClass[i])
+              }
+              return
+          }
+          if(oldClass instanceof Array){
+              for(var c=0; c < oldClass.length; c++){
+                changeClass(element,oldClass[c],newClass)
+              }
+          }
+          var classes=single(element.className," ").split(" ")
+          var numClasses=classes.length
+          for(var i=0; i < numClasses; i++){
+            if(classes[i] == oldClass || classes[i] == newClass){classes.splice(i,1); i--}
+          }
+          classes.push(newClass)
+          element.className=classes.join(" ")
+}
+    </script>
 </head>
 <body class="my-fonts">
     <div class="hfull brand-gradient minor-pad" id="main">
         <div id="menu" class="flex vcenter apart full-width">
             <h1 id="brand-logo">Biccas</h1>
+            <div id="menu-ini">
+                &#8801;
+            </div>
+            <div class="fixed top left full-width full-height menu-curtain" id="menu-curtain"></div>
             <div id="menu-links" class="flex vcenter apart">
+                <div id="ss-menu-top">
+                    <button class="round" id="menu-close">x</button>
+                </div>
                 <div class="links-1 flex vcenter">
                     <a href="index.html" class="current">Home</a>
-                    <a href="Product.html">Product</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="about.html">About us</a>
+                    <a href="">Product</a>
+                    <a href="">FAQ</a>
+                    <a href="">Blog</a>
+                    <a href="">About us</a>
                 </div>
                 <div class="links-2 flex vcenter">
-                    <a href="login.html">Login</a>
+                    <a href="">Login</a>
                     <button class="button" style="padding:4%">Sign Up</button>
                 </div>
             </div>
@@ -130,7 +212,7 @@
                 <h1 style="margin:0">We're here to Increase your Productivity</h1>
                 <!--line drawn with canvas to underline this text-->
                 <div class="space-up">
-                    Let's make your work more organize and easily using the Takio Dashboard with many of the latest featuresin managing work every day.
+                    Let's make your work more organized and effective using the Biccas Dashboard with many of the latest features in managing work every day.
                 </div>
                 <div class="flex vcenter space-up">
                     <button class="brand-theme-bg white octa">Try free trial</button>
@@ -143,7 +225,7 @@
             </div>
         </div>
         <div>
-            <h1 class="center-text" style="font-size:30px">More than 25,000 teams use Collabs</h1>
+            <h1 class="center-text" style="font-size:30px">More than 25,000 teams use Biccas</h1>
             <div id="customers" class="center-text">
                 <div class="item">
                     <div class="flex vcenter">
@@ -180,7 +262,7 @@
     </div>
     <div id="section-2" class="flex hcenter minor-pad">
         <div class="part-1">
-            <h1>How we support our pratner all over the world</h1>
+            <h1>How we support our pratners all over the world</h1>
             <div class="grey">
                 SaaS became a common delivery model for many business applicaion , including office sofware, messaging software, payroll processing software, 
                 DBMS software, management software
@@ -254,7 +336,7 @@
             </div>
             <button class="button octa brand-theme-bg white">Get Started</button>
         </div>
-        <div class="flex vend hcenter">
+        <div class="flex vend hcenter" id="features-specs">
             <div class="feature">
                 <img src="images/collaborative-teams.png" alt="">
                 <div>
@@ -279,7 +361,7 @@
         </div>
     </div>
     <div id="section-4" class="minor-pad flex vcenter apart">
-        <div id="part-1">
+        <div class="part-1">
             <h1>What Benefit Will You Get</h1>
             <div id="benefit-list">
                 <div class="benefit flex vcenter">
@@ -304,7 +386,7 @@
                 </div>
             </div>
         </div>
-        <div id="part-2">
+        <div class="part-2">
             <img src="images/benefits-illustration.png" alt="">
         </div>
     </div>
@@ -501,5 +583,21 @@
             </ul>
         </div>
     </div>
+    <script>
+        var menuOpener = document.getElementById("menu-ini")
+        var theMenu = document.getElementById("menu")
+        var closeMenuBtn = document.getElementById("menu-close")
+        menuOpener.onclick = openMenu
+        closeMenuBtn.onclick = closeMenu
+        document.getElementById("menu-curtain").onclick = closeMenu
+        
+        function openMenu(){
+            changeClass(theMenu,"","open")
+        }
+        function closeMenu(){
+            changeClass(theMenu,"open","")
+            console.log("close")
+        }
+    </script>
 </body>
 </html>
