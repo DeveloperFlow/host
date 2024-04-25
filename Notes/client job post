@@ -1,11 +1,0 @@
-
-Go Back
-Website with outside libraries
-Posted 7 minutes ago
-Worldwide
-Send a proposal for: 14 Connects
-Available Connects: 50
-For project 5, you will consider the relationship between human and robot which has been one of the most important topics since the industrial revolution in the 18th century. Western fantasies like to anthropomorphize robots out of the fascination and fear of being replaced. We've all have seen movies, TV shows, or click-bait articles positioning human as "us" and robots as "them" — will they steal our jobs? Will they guard our home and provide emotional and care labor to our children and the elderly? Will they realized their oppressed position one day and take revenge? Will they live on when we are gone?   In reality, as AI and machine learning are being rapidly developed to make robots "smarter", we need to be asking better questions not just on the power relations between human to robots, but also human to human. Does Alexa really cares whether someone says thank you to them? If robots are taking your job away, who is designing those robots and who should really be held accountable for your lost job? Can we imagine new relationships between human and robots that goes beyond the fantasies of the dominant - surbordinate?   You will imagine a new human-robot relationship by designing an artificial companion. As the final project, you will now incorporate outside javascript libraries. These libraries could assist to generate dialogue, use the camera and include facial recognition, add a DOM interface, and process images in surprising ways. You could use Rita.js, OpenAI, p5.speech, the Teachable Machine, or any other libraries. In essence you're creating a communication software that may or may not have an anthropomorphic appearance. Think about input and output, the kinds of cues and expressions you end up designing will have a great impact on the meaning of your relationship.
-
-Design Constraints
-(1) Your project must use an outside js library (i.e: p5.js, p5play, three.js, d3, Leaflet, ML5, clmtracker, teachable machine, paperjs, etc)
