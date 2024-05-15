@@ -11,10 +11,16 @@
         .minor-pad{padding:3%;}
         #main{min-height:0}
         #welcome-board .part-1{width:50%}
+        #welcome-board .part-1 .space-up{
+            margin-top: 7%;
+        }
         #welcome-board .part-1 h1{font-size:50px}
         #welcome-board .part-2{width:50%; text-align: center;}
         #welcome-board .part-2 img{width:95%; height:auto}
 
+        #customers .item{
+            margin-top: 3%;
+        }
         #customers .item{display:inline-block; color:#ddd}
         #customers .item span{color:#ddd; margin-left:5px}
         #customers .item.space-left{margin-left:5%}
@@ -108,11 +114,15 @@
         
         /*smaller screens*/
         @media only screen and (max-width:800px){
+          h1{
+            text-align: center;
+          }
           #welcome-board{
               display:block;
           }
           #welcome-board .part-1{
               width: 100%;
+              text-align: center;
           }
           #welcome-board .part-1 h1{
               font-size: 40px;
@@ -123,14 +133,26 @@
           }
           
           #section-2{display: block}
-          #section-2 .part-1, #section-2 .part-2{width:100%}
+          #section-2 .part-1, #section-2 .part-2{
+              width:100%;
+              text-align: center
+          }
+          #section-2 .part-2 .item.flex{
+              display: block;
+              margin-top: 7%;
+          }
+          #section-2 .part-2 .item.flex .icon{
+              width: 50%;
+              max-width: 50px;
+          }
           
           #features{
               display: block;
+              text-align: center;
           }
           #features h1{width: 100%}
           #features div{width: 100%}
-          #features-specs{display:block}
+          #features-specs{display:block; margin-top: 7%}
           #features-specs .feature{width: 100% !important; text-align: center; margin-top:3%}
           #features-specs .feature img{
               width:30%;
@@ -138,12 +160,19 @@
           
           #section-4{
               display: block; text-align: center;
+              margin-top: 4%; padding: 5%;
           }
           #section-4 .part-1{width:100%}
           #section-4 .part-2{width:100%;}
           #section-4 .part-2 img{width: 80% !important;}
           #section-4 #benefit-list{text-align: left}
+          #benefit-list .space-left{
+            margin-left: 4%;
+          }
           
+          #section-5{
+            padding: 7%;
+          }
           #plans{display: block}
           #plans .plan{width: 100%; max-width:400px; margin: auto}
         
@@ -534,7 +563,7 @@
             <div class="space-up">
                 <button class="button brand-theme-bg white full-width" style="padding:3%">Request Demo</button>
             </div>
-            <div class="right-text">
+            <div class="right-text small-text space-up">
                 <a href="create-account">Or Start Free Trial</a>
             </div>
         </div>
