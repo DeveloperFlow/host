@@ -1,6 +1,9 @@
 /*general asthetics*/
 body{margin:0; padding:0; background-color: #fafafa;}
 *{color:#333}
+h1,h2{
+  font-family: playfair !important;
+}
 a{text-decoration: none;}
 .brand-gradient{background-image:linear-gradient(90deg,#dbffff,#fff,#fff);}
 .brand-theme-bg{background-color: #0d9;}
@@ -129,8 +132,20 @@ input:focus{border:none; outline:none}
   
   #footer{display: block}
   #footer .part-1{width:100%}
+  #footer .part-1{
+    text-align: center;
+  }
+  #footer .part-1 .fancy-input{
+    margin: auto;
+    margin-top: 3%;
+  }
   #footer .part-2{width:100%; display: block; margin-top:3%}
   #footer .part-2 .links{margin-top:7%; width: 100%}
   
   #legal{display: block; font-size: 13px;}
+}
+
+@font-face{
+  font-family: playfair;
+  src: url("../lib/fonts/lv.ttf")
 }
